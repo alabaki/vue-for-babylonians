@@ -44,7 +44,11 @@ export class Observer {
     this.dep = new Dep()
     this.vmCount = 0
     def(value, '__ob__', this)
-    if (Array.isArray(value)) {
+    if (value._permittedReactivity) {
+      for (let i = 0; i < value._permittedReactivity.length; i++) {
+        defineReactive(value, value._permittedReactivity[i])
+      }
+    } else if (Array.isArray(value)) {
       if (hasProto) {
         protoAugment(value, arrayMethods)
       } else {
@@ -112,8 +116,8 @@ export function observe (value: any, asRootData: ?boolean): Observer | void {
     return
   }
   if (value._permittedReactivity) {
-    //if _permittedReactivity property exist, then do not set observable for now. Later in refactor you'll want to set observable if there are keys, and then walk through them
-    return
+    const keys = Object.keys(value)
+    if (keys.length == 0) return;
   }
   let ob: Observer | void
   if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {

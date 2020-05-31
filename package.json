@@ -1,7 +1,7 @@
 {
-  "name": "vue",
+  "name": "vue-for-babylonians",
   "version": "2.6.11",
-  "description": "Reactive, component-oriented view layer for modern web interfaces.",
+  "description": "Reactive, component-oriented view layer for modern web interfaces. Forked from Vue branch of v2.6.11. Library is configured for BabylonJs projects. The current implementation of Vue automatically injects reactive getters and setters for all Vue variables. Injecting reactive getters and setters on Babylon objects create significant bloat and causes performance hit on FPS. This library prevents all Babylon objects from being set with reactive setters/getters.",
   "main": "dist/vue.runtime.common.js",
   "module": "dist/vue.runtime.esm.js",
   "unpkg": "dist/vue.js",
@@ -40,12 +40,7 @@
     "bench:ssr": "npm run build:ssr && node benchmarks/ssr/renderToString.js && node benchmarks/ssr/renderToStream.js",
     "release": "bash scripts/release.sh",
     "release:weex": "bash scripts/release-weex.sh",
-    "release:note": "node scripts/gen-release-note.js",
-    "commit": "git-cz"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "node scripts/verify-commit-msg.js"
+    "release:note": "node scripts/gen-release-note.js"
   },
   "lint-staged": {
     "*.js": [
@@ -55,17 +50,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue.git"
+    "url": "git+https://github.com/cyrilnie/vue.git"
   },
   "keywords": [
-    "vue"
+    "vue",
+    "babylonjs"
   ],
-  "author": "Evan You",
+  "author": "Coffiend and all the wonderful contributers of Vue",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue/issues"
+    "url": "https://github.com/cyrilnie/vue/issues"
   },
-  "homepage": "https://github.com/vuejs/vue#readme",
+  "homepage": "https://github.com/cyrilnie/vue#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
