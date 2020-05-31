@@ -111,6 +111,10 @@ export function observe (value: any, asRootData: ?boolean): Observer | void {
   if (!isObject(value) || value instanceof VNode) {
     return
   }
+  if (value._permittedReactivity) {
+    //if _permittedReactivity property exist, then do not set observable for now. Later in refactor you'll want to set observable if there are keys, and then walk through them
+    return
+  }
   let ob: Observer | void
   if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {
     ob = value.__ob__
