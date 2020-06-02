@@ -43,6 +43,8 @@ let example = {
 
 If you do not attach '_permittedReactivity' to the object, then Vue will automatically register the entire object and its properties as reactive (just as Vue normally does). 
 
+Please note Vue inject reactive getters/setters the first time it is set as a Vue variable. So you must set the _permittedReactivity property before setting it in Vue for it to take effect. Setting _permittedReactivity after the object is already made into a Vue variable will be ignored.
+
 
 ## License
 
