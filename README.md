@@ -7,7 +7,7 @@ Vue.js is an MIT-licensed open source project with its ongoing development made 
 
 #### What's the difference between this library and VueJs?
 
-Forked from Vue branch of v2.6.11. Library is originally intended for BabylonJs projects but can be applied for any project where reactivity is desired to be optional. The current implementation of Vue automatically injects reactive getters and setters for all Vue variables. Injecting reactive getters and setters on large and fluid objects, e.g. Babylon objects, create significant bloat and causes performance hit on FPS. This library enables developers to prevent reactivity on objects and even specify the object properties that are intended to be reactive.
+Forked from Vue branch of v2.6.11. Library is originally intended for BabylonJs projects but can be applied for any project where reactivity is desired to be optional. Vue automatically injects reactive getters and setters for all Vue variables. Injecting reactive getters and setters on large and fluid objects, e.g. Babylon objects, create significant bloat and causes performance hit on FPS. This library enables developers to prevent reactivity on objects and even specify the object properties that are intended to be reactive.
 
 #### How to install?
 
