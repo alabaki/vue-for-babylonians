@@ -13,31 +13,33 @@ Forked from Vue branch of v2.6.11. Library is originally intended for BabylonJs 
 
 Given the dependencies on the Vue runtime from the ecosystem of tools like vue-cli and the Vue compiler, the recommended approach is to npm install into your project with the same package alias with Vue. Please note this library currently only works for Vue v2.6.11.
 
-'''
+```
 npm i vue@npm:vue-for-babylonians@2.6.11
-'''
+```
 
 #### How to use?
 
 If you have an object that you do not want Vue to automatically register as reactive and inject reactive getters/setters, then attach a property called '_permittedReactivity'.
 
  '_permittedReactivity' should hold a list of object property keys that you want to be reactive. All other object property keys will not be reactive. 
- '''
+ 
+ ```
 let example = {
     foo: 'FOO',
     bar: 'BAR',
     _permittedReactivity: ['foo']   //foo will be reactive. bar will not.
 }
-'''
+```
 
 If your intention is to omit the entire object from becoming reactive, simply attach '_permittedReactivity' to the object as an empty list.
-'''
+
+```
 let example = {
     foo: 'FOO',
     bar: 'BAR',
     _permittedReactivity: []   //foo and bar will not be reactive.
 }
-'''
+```
 
 If you do not attach '_permittedReactivity' to the object, then Vue will automatically register the entire object and its properties as reactive (just as Vue normally does). 
 
