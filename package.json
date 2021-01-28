@@ -1,5 +1,5 @@
 {
-  "name": "vue-for-babylonians",
+  "name": "@alabaki/vue-for-babylonians",
   "version": "2.6.11",
   "description": "Reactive, component-oriented view layer for modern web interfaces. Forked from Vue branch of v2.6.11. Library is configured for BabylonJs projects. The current implementation of Vue automatically injects reactive getters and setters for all Vue variables. Injecting reactive getters and setters on Babylon objects create significant bloat and causes performance hit on FPS. This library prevents all Babylon objects from being set with reactive setters/getters.",
   "main": "dist/vue.runtime.common.js",
@@ -49,8 +49,10 @@
     ]
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cyrilnie/vue.git"
+    "url": "git@github.com:alabaki/vue-for-babylonians.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "vue",
